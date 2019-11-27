@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="GeneticAlgorithm.VisualOptimization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GeneticAlgorithm"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1250" d:DataContext="{d:DesignInstance local:VisualOptimization}">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*" MinHeight="100"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10, 10, 10, 10" Background="Black" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10, 10, 10, 10" VerticalAlignment="Center">
+                <TextBlock Foreground="WhiteSmoke" HorizontalAlignment="Center">Mutation Rate</TextBlock>
+                <Slider Maximum="10" TickPlacement="BottomRight" TickFrequency="1" Margin="10, 10, 10, 0" IsSnapToTickEnabled="True" Name="sliderMutation" ValueChanged="Mutation_ValueChanged"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="10, 10, 10, 10" VerticalAlignment="Center">
+                <TextBlock Foreground="WhiteSmoke" HorizontalAlignment="Center">Population Size</TextBlock>
+                <TextBox TextAlignment="Center" Margin="10, 10, 10, 10" Name="PopulationText"></TextBox>
+            </StackPanel>
+            <Grid Grid.Column="2" Margin="10, 10, 10, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" Foreground="WhiteSmoke" HorizontalAlignment="Center">Gene Distribution</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="APPL" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Name="appl_w" Text="{Binding Appl_Weight, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="MSFT" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="{Binding Msft_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="AMZN" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Text="{Binding Amzn_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="6" Text="NFLX" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="7" Text="{Binding Nflx_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="8" Text="FB" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="9" Text="{Binding Fb_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="BXC" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="{Binding Bxc_Weight, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="XOM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="{Binding Xom_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="JNJ" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Text="{Binding Jnj_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="6" Text="NCD" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="7" Text="{Binding Mcd_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="8" Text="JPM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="9" Text="{Binding Jpm_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Column="3" Margin="10, 10, 10, 10" VerticalAlignment="Center">
+                <TextBlock Foreground="WhiteSmoke" HorizontalAlignment="Center">Optimal Value</TextBlock>
+                <TextBox TextAlignment="Center" Margin="10, 10, 10, 10" Name="OptimalValue"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Margin="10, 10, 10, 10" VerticalAlignment="Center">
+                <TextBlock Foreground="WhiteSmoke" HorizontalAlignment="Center">Start</TextBlock>
+                <Button MaxHeight="30" MaxWidth="150" Grid.Column="4" Click="StartOptimization" Margin="10, 10, 10, 10">Optimize Portfolio!</Button>
+            </StackPanel>
+        </Grid>
+
+        <lvc:CartesianChart Name="MyChart" Grid.Row="1" Margin="10, 0, 10, 10" BorderBrush="WhiteSmoke" Background="Black">
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries     
+                    Values="{Binding MyValues}" />
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis MinValue="0" MaxValue="30" Title="Fitness (Return)" FontSize="20" Margin="10, 10, 10, 10"/>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Generation" FontSize="20" Margin="10, 10, 10, 10"/>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+    </Grid>
+</UserControl>

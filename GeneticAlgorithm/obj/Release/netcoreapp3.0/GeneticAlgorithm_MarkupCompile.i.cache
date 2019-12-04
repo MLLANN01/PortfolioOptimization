@@ -1,18 +1,18 @@
 ﻿GeneticAlgorithm
 
 
-exe
+winexe
 C#
 .cs
-C:\Users\marsh\Documents\GitHub\PortfolioOptimization\GeneticAlgorithm\obj\Debug\netcoreapp3.0\
+C:\Users\marsh\Documents\GitHub\PortfolioOptimization\GeneticAlgorithm\obj\Release\netcoreapp3.0\
 GeneticAlgorithm
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_0
 C:\Users\marsh\Documents\GitHub\PortfolioOptimization\GeneticAlgorithm\App.xaml
 12076253053
 
-7832819376
+5-765690728
 194-1323504877
 VisualOptimization.xaml;
 

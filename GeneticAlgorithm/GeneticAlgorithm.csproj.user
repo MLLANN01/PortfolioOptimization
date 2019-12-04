@@ -14,9 +14,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="VisualOptimization.xaml">
       <SubType>Designer</SubType>
     </Page>

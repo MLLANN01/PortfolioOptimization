@@ -9,7 +9,7 @@
              d:DesignHeight="1000" d:DesignWidth="1250" d:DataContext="{d:DesignInstance local:VisualOptimization}">
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*" MinHeight="100"/>
+            <RowDefinition Height="0.3*" MinHeight="120"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -51,16 +51,17 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Column="0" Text="APPL" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="1" Name="appl_w" Text="{Binding Appl_Weight, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="2" Text="MSFT" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="3" Text="{Binding Msft_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="4" Text="AMZN" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="5" Text="{Binding Amzn_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="6" Text="NFLX" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="7" Text="{Binding Nflx_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="8" Text="FB" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="9" Text="{Binding Fb_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="MSFT" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="AMZN" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="NFLX" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="FB" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Text="BXC" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="6" Text="XOM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="7" Text="JNJ" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="8" Text="NCD" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="9" Text="JPM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
+                
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -74,16 +75,16 @@
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Column="0" Text="BXC" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="1" Text="{Binding Bxc_Weight, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="2" Text="XOM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="3" Text="{Binding Xom_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="4" Text="JNJ" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="5" Text="{Binding Jnj_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="6" Text="NCD" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="7" Text="{Binding Mcd_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="8" Text="JPM" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    
+                    <TextBlock Grid.Column="0" Text="{Binding Appl_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="{Binding Msft_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Amzn_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="{Binding Nflx_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="{Binding Fb_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Text="{Binding Bxc_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="6" Text="{Binding Xom_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="7" Text="{Binding Jnj_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="8" Text="{Binding Mcd_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Grid.Column="9" Text="{Binding Jpm_Weight, StringFormat={}{0:#,#.00}%}" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
             </Grid>
@@ -94,6 +95,7 @@
             <StackPanel Grid.Column="4" Margin="10, 10, 10, 10" VerticalAlignment="Center">
                 <TextBlock Foreground="WhiteSmoke" HorizontalAlignment="Center">Start</TextBlock>
                 <Button MaxHeight="30" MaxWidth="150" Grid.Column="4" Click="StartOptimization" Margin="10, 10, 10, 10">Optimize Portfolio!</Button>
+                <TextBlock Text="{Binding Elapsed_Time}" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
             </StackPanel>
         </Grid>
 

@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-C:\Users\marsh\Documents\GitHub\CombinatorialOptimizationAndModernHeuristics\geneticAlgorithm\obj\Debug\netcoreapp3.0\
+C:\Users\marsh\Documents\GitHub\PortfolioOptimization\GeneticAlgorithm\obj\Debug\netcoreapp3.0\
 GeneticAlgorithm
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
-C:\Users\marsh\Documents\GitHub\CombinatorialOptimizationAndModernHeuristics\geneticAlgorithm\App.xaml
-2-1067166118
+C:\Users\marsh\Documents\GitHub\PortfolioOptimization\GeneticAlgorithm\App.xaml
+12076253053
 
-5796944108
+61484594535
 194-1323504877
-MainWindow.xaml;VisualOptimization.xaml;
+VisualOptimization.xaml;
 
 False
 

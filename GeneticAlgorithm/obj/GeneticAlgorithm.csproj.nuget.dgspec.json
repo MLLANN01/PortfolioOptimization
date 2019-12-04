@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marsh\\Documents\\GitHub\\CombinatorialOptimizationAndModernHeuristics\\geneticAlgorithm\\GeneticAlgorithm.csproj": {}
+    "C:\\Users\\marsh\\Documents\\GitHub\\PortfolioOptimization\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marsh\\Documents\\GitHub\\CombinatorialOptimizationAndModernHeuristics\\geneticAlgorithm\\GeneticAlgorithm.csproj": {
+    "C:\\Users\\marsh\\Documents\\GitHub\\PortfolioOptimization\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marsh\\Documents\\GitHub\\CombinatorialOptimizationAndModernHeuristics\\geneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectUniqueName": "C:\\Users\\marsh\\Documents\\GitHub\\PortfolioOptimization\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "projectName": "GeneticAlgorithm",
-        "projectPath": "C:\\Users\\marsh\\Documents\\GitHub\\CombinatorialOptimizationAndModernHeuristics\\geneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectPath": "C:\\Users\\marsh\\Documents\\GitHub\\PortfolioOptimization\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "packagesPath": "C:\\Users\\marsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marsh\\Documents\\GitHub\\CombinatorialOptimizationAndModernHeuristics\\geneticAlgorithm\\obj\\",
+        "outputPath": "C:\\Users\\marsh\\Documents\\GitHub\\PortfolioOptimization\\GeneticAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

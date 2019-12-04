@@ -112,6 +112,7 @@ namespace GeneticAlgorithm
             double secGenesSum = 0;
             double thirdGenesSum = 0;
             double fourthGenesSum = 0;
+            double childGenesSum = 0;
 
             stopWatch.Reset();
             Elapsed_Time = "Time: 00:00:00.00";
@@ -156,21 +157,24 @@ namespace GeneticAlgorithm
                     secGenesSum += secondFittest.genes[i];
                     thirdGenesSum += thirdFittest.genes[i];
                     fourthGenesSum += fourthFittest.genes[i];
+                    childGenesSum += child.genes[i];
                 }
 
                 for (int i = 0; i < fittest.genes.Length; i++)
                 {
                     // make genes add to 1
-                    fittest.genes[i] = (fittest.genes[i] / genesSum) * 1;
-                    secondFittest.genes[i] = (secondFittest.genes[i] / secGenesSum) * 1;
-                    thirdFittest.genes[i] = (thirdFittest.genes[i] / thirdGenesSum) * 1;
-                    fourthFittest.genes[i] = (fourthFittest.genes[i] / fourthGenesSum) * 1;
+                    //fittest.genes[i] = (fittest.genes[i] / genesSum) * 1;
+                    //secondFittest.genes[i] = (secondFittest.genes[i] / secGenesSum) * 1;
+                    //thirdFittest.genes[i] = (thirdFittest.genes[i] / thirdGenesSum) * 1;
+                    //fourthFittest.genes[i] = (fourthFittest.genes[i] / fourthGenesSum) * 1;
+                    child.genes[i] = (child.genes[i] / childGenesSum) * 1;
                 }
 
                 genesSum = 0;
                 secGenesSum = 0;
                 thirdGenesSum = 0;
                 fourthGenesSum = 0;
+                childGenesSum = 0;
 
                 for (int i = 0; i < fittest.genes.Length; i++)
                 {
@@ -178,17 +182,21 @@ namespace GeneticAlgorithm
                     secGenesSum += secondFittest.genes[i];
                     thirdGenesSum += thirdFittest.genes[i];
                     fourthGenesSum += fourthFittest.genes[i];
+                    childGenesSum += child.genes[i];
                 }
 
                 Console.WriteLine("Genes Sum: " + genesSum);
                 Console.WriteLine("SecGenes Sum: " + secGenesSum);
                 Console.WriteLine("ThirdGenes Sum: " + thirdGenesSum);
                 Console.WriteLine("FourthGenes Sum: " + fourthGenesSum);
+                Console.WriteLine("Child Genes Sum: " + childGenesSum);
+
 
                 genesSum = 0;
                 secGenesSum = 0;
                 thirdGenesSum = 0;
                 fourthGenesSum = 0;
+                childGenesSum = 0;
 
                 updateFitnessValues();
 
@@ -414,6 +422,7 @@ namespace GeneticAlgorithm
             secondFittest.calcFitness();
             thirdFittest.calcFitness();
             fourthFittest.calcFitness();
+            child.calcFitness();
         }
 
         //Replace least fittest individual from most fittest offspring

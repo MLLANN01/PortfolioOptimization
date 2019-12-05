@@ -86,7 +86,16 @@ namespace GeneticAlgorithm.Model
             // Calculate portfolio return for a given entry
             for (int i = 0; i <= 39; i++)
             {
-                port_ret[i] = appleReturns[i] * genes[0] + microsoftReturns[i] * genes[1] + amazonReturns[i] * genes[2] + netflixReturns[i] * genes[3] + facebookReturns[i] * genes[4] + blueLinxReturns[i] * genes[5] + exxonMobileReturns[i] * genes[6] + johnsonReturns[i] * genes[7] + mcdonaldReturns[i] * genes[8] + jpMorganReturns[i] * genes[9];
+                port_ret[i] = appleReturns[i] * genes[0] + 
+                    microsoftReturns[i] * genes[1] + 
+                    amazonReturns[i] * genes[2] + 
+                    netflixReturns[i] * genes[3] + 
+                    facebookReturns[i] * genes[4] + 
+                    blueLinxReturns[i] * genes[5] + 
+                    exxonMobileReturns[i] * genes[6] + 
+                    johnsonReturns[i] * genes[7] + 
+                    mcdonaldReturns[i] * genes[8] + 
+                    jpMorganReturns[i] * genes[9];
             }
 
             // Get the sum of all portfolio returns

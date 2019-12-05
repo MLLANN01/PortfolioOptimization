@@ -26,6 +26,8 @@ namespace GeneticAlgorithm
         public Individual thirdFittest;
         public Individual fourthFittest;
         public Individual child = new Individual();
+        public Individual child2 = new Individual();
+
         // public RouletteEngine rouletteEngine = new RouletteEngine();
 
         int generationCount = 0;
@@ -113,6 +115,8 @@ namespace GeneticAlgorithm
             double thirdGenesSum = 0;
             double fourthGenesSum = 0;
             double childGenesSum = 0;
+            double child2GenesSum = 0;
+
 
             stopWatch.Reset();
             Elapsed_Time = "Time: 00:00:00.00";
@@ -137,7 +141,7 @@ namespace GeneticAlgorithm
             //Continue genetics until optimal fitness value is found
             while (population.fittest < optimalValue)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(50);
                 ++generationCount;
 
                 selection();
@@ -149,7 +153,7 @@ namespace GeneticAlgorithm
                     mutation();
                 }
 
-                replacement();
+                replacement(populationSize);
 
                 for (int i = 0; i < fittest.genes.Length; i++)
                 {
@@ -158,6 +162,7 @@ namespace GeneticAlgorithm
                     thirdGenesSum += thirdFittest.genes[i];
                     fourthGenesSum += fourthFittest.genes[i];
                     childGenesSum += child.genes[i];
+                    child2GenesSum += child2.genes[i];
                 }
 
                 for (int i = 0; i < fittest.genes.Length; i++)
@@ -168,6 +173,7 @@ namespace GeneticAlgorithm
                     //thirdFittest.genes[i] = (thirdFittest.genes[i] / thirdGenesSum) * 1;
                     //fourthFittest.genes[i] = (fourthFittest.genes[i] / fourthGenesSum) * 1;
                     child.genes[i] = (child.genes[i] / childGenesSum) * 1;
+                    child2.genes[i] = (child2.genes[i] / child2GenesSum) * 1;
                 }
 
                 genesSum = 0;
@@ -175,6 +181,7 @@ namespace GeneticAlgorithm
                 thirdGenesSum = 0;
                 fourthGenesSum = 0;
                 childGenesSum = 0;
+                child2GenesSum = 0;
 
                 for (int i = 0; i < fittest.genes.Length; i++)
                 {
@@ -183,6 +190,7 @@ namespace GeneticAlgorithm
                     thirdGenesSum += thirdFittest.genes[i];
                     fourthGenesSum += fourthFittest.genes[i];
                     childGenesSum += child.genes[i];
+                    child2GenesSum += child2.genes[i];
                 }
 
                 Console.WriteLine("Genes Sum: " + genesSum);
@@ -190,6 +198,7 @@ namespace GeneticAlgorithm
                 Console.WriteLine("ThirdGenes Sum: " + thirdGenesSum);
                 Console.WriteLine("FourthGenes Sum: " + fourthGenesSum);
                 Console.WriteLine("Child Genes Sum: " + childGenesSum);
+                Console.WriteLine("Child2 Genes Sum: " + child2GenesSum);
 
 
                 genesSum = 0;
@@ -197,6 +206,7 @@ namespace GeneticAlgorithm
                 thirdGenesSum = 0;
                 fourthGenesSum = 0;
                 childGenesSum = 0;
+                child2GenesSum = 0;
 
                 updateFitnessValues();
 
@@ -268,6 +278,8 @@ namespace GeneticAlgorithm
         {
             Random rn = new Random();
             List<double> tempList = new List<double>();
+            List<double> tempList2 = new List<double>();
+
 
             /*
             Console.WriteLine("Pre Crossover Reults:");
@@ -346,7 +358,22 @@ namespace GeneticAlgorithm
                 tempList.Add(secondFittest.genes[i]);
             }
 
+            int crossOverPoint2 = rn.Next(9);
 
+            for (int i = 0; i < crossOverPoint2; i++)
+            {
+                tempList2.Add(thirdFittest.genes[i]);
+            }
+
+            for (int i = crossOverPoint2; i < 10; i++)
+            {
+                tempList2.Add(fourthFittest.genes[i]);
+            }
+
+            child.genes = tempList.ToArray();
+            child2.genes = tempList2.ToArray();
+
+            /*
             Console.WriteLine("List Genes:");
 
             for (int i = 0; i <= 9; i++)
@@ -362,7 +389,7 @@ namespace GeneticAlgorithm
             {
                 Console.WriteLine(child.genes[i]);
             }
-
+            */
         }
 
         //Mutation
@@ -377,6 +404,14 @@ namespace GeneticAlgorithm
 
             //Mutate values at the mutation point
             child.genes[mutationPoint] = rn.NextDouble();
+
+            //Select a random mutation point
+            int mutationPoint2 = rn.Next(population.individuals[0].geneLength - 1);
+
+            // Console.WriteLine("Fittest Mutation Point: " + mutationPoint);
+
+            //Mutate values at the mutation point
+            child2.genes[mutationPoint2] = rn.NextDouble();
 
             /*
             Console.WriteLine("Fittest Post Mutation: ");
@@ -423,16 +458,24 @@ namespace GeneticAlgorithm
             thirdFittest.calcFitness();
             fourthFittest.calcFitness();
             child.calcFitness();
+           // child2.calcFitness();
         }
 
         //Replace least fittest individual from most fittest offspring
-        void replacement()
+        void replacement(int populationSize)
         {
             int replaceIndex = 0;
 
             replaceIndex = population.getLeastFittestIndex();
 
             population.individuals[replaceIndex] = child;
+            /*
+            Random rn = new Random();
+            int replaceIndex2 = rn.Next(populationSize - 1);
+            population.individuals[replaceIndex2] = child2;
+            */
+
+
 
         }
 
